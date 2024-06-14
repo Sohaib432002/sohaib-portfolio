@@ -676,7 +676,7 @@ body {
 }
 
 .pj1 {
-    background-image: url('../../new/online-education-website-template.jpg');
+    background-image: url('https://healthitanalytics.com/images/site/article_headers/_normal/ThinkstockPhotos-495951912.jpg');
     background-size: cover;
 
 }
@@ -697,7 +697,7 @@ body {
 }
 
 .pj2 {
-    background-image: url('../../new/digital-agency-website-template.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS1bxtsn8q53XGLIyXB41PI6iOxaM4hcRxLA&s');
     background-size: cover;
 
 }
@@ -1166,6 +1166,12 @@ html {
         height: 204px;
         position: relative;
     }
+    .project-section {
+        height: 330vh;
+    }
+    .contact-section {
+        height: 330vh;
+    }
 }
 @media (max-height:667px) and (max-width:375px) {
     .about-section {
@@ -1173,7 +1179,7 @@ html {
     }
 
     .project-section {
-        height: 300vh;
+        height: 330vh;
     }
 
     .contact-me-table {
@@ -1191,13 +1197,13 @@ html {
 }
 
 
-@media (max-height:740px) and (max-width:360px) {
+@media (max-height:740px) and (max-width:375px) {
     .about-section {
         height: 213vh;
     }
 
     .project-section {
-        height: 270vh;
+        height: 330vh;
     }
 
     .contact-me-table {
@@ -1278,6 +1284,11 @@ html {
     padding-bottom: 80px;
     background-image: url();
     color: white;
+}
+
+.footer-about p{
+    margin: 0 0 23px 0;
+
 }
 
 .container {
@@ -1387,11 +1398,23 @@ a {
     .col-md-3 {
         width: 100%; /* Full width on smaller screens */
         max-width: 100%;
+        }
+        
+        .col-md-3 img {
+            width: 200px; /* Adjust image size for smaller screens */
+            max-width: 100%;
+            margin: 0px 0px 30px 0px;
     }
     
-    .col-md-3 img {
-        width: 200px; /* Adjust image size for smaller screens */
-        max-width: 100%;
+    .header {
+        height: 145%;
+    }
+    .about-section {
+        height: 217vh;
+    }
+    
+    .contact-section {
+        height: 256vh;
     }
 }
 
@@ -1411,3 +1434,6 @@ a {
 .fa-solid a{
     color: #777777;
 }
+
+
+    
