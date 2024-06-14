@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore House Prediction | Sohaib Creation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://images.newscientist.com/wp-content/uploads/2022/10/17121630/SEI_129843131.jpg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .cont1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .left_cont1, .right_cont1 {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .left_cont1 img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        .txt1 {
+            font-size: 3rem;
+            text-align: center;
+            color: yellow;
+        }
+
+        .txt2 {
+            font-size: 1rem;
+            display: block;
+            color: yellow;
+        }
+
+        .cont2 p {
+            color: red;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 10px 0;
+        }
+
+        .cont3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .cont3 input {
+            flex: 1 1 calc(50% - 20px);
+            font-size: 1rem;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            font-size: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            background-color: gray;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.7s ease, color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: black;
+        }
+
+        @media (max-width: 768px) {
+            .cont1 {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left_cont1, .right_cont1 {
+                flex: 1 1 100%;
+            }
+
+            .txt1 {
+                font-size: 1.5rem;
+                color: yellow;
+            }
+
+            .txt2 {
+                font-size: 1rem;
+                color: yellow;
+            }
+
+            .cont3 input {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cont1">
+            <div class="left_cont1">
+                <img src="https://namal.edu.pk/uploads/logo22869383.png" alt="error">
+            </div>
+            <div class="right_cont1">    
+                <h1 class="txt1">Bangalore Real-Estate Pvt. Ltd <br> <span class="txt2">Powered by Sohaib Creation</span></h1>
+            </div>
+        </div>
+
+        <div class="cont2">
+            <p>*Enter the information of House to predict the Price*</p>
+        </div>
+        
+        <div class="cont3">
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type="number" name="bath" id="bath" placeholder="Bathrooms" required>
+                <input type="number" name="balcony" id="balcony" placeholder="Balcony" required>
+                <input type="number" name="total_sqft_int" id="total_sqft_int" placeholder="Total square ft" required>
+                <input type="number" name="bhk" id="bhk" placeholder="BHK" required>
+                <input type="number" name="price_per_sqft" id="price_per_sqft" placeholder="Price per sqft" required>
+                <input type="text" name="area_type" id="area_type" placeholder="Area type" required>
+                <input type="text" name="availability" id="availability" placeholder="House Availability" required>
+                <input type="text" name="location" id="location" placeholder="House location" required>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Predict</button>
+                </div>
+            </form>
+        </div>
+
+        {% if prediction_text %}
+        <div class="cont4">
+            <p>{{ prediction_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
